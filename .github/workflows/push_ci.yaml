@@ -36,11 +36,11 @@ jobs:
           restore-keys: |
             gradle-builds
       - name: Build with Gradle
-        env:
-          REL_KEY: ${{ secrets.REL_KEY }}
+#        env:
+#          REL_KEY: ${{ secrets.REL_KEY }}
 #          APP_SECRET: ${{ secrets.APP_SECRET }}
         run: |
-          bash ./gradlew assembleRelease assembleDebug
+          bash ./gradlew assembleDebug
       - name: Upload built apk
         if: success()
         uses: actions/upload-artifact@v4.6.0
